@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PokemonScrollAnimation } from "@/components/PokemonScrollAnimation";
-import repokeLogo from "@/assets/repoke-logo.png.asset.json";
+import repokeLogo from "@/assets/repoke-logo.png";
 
 
 const EBAY_FEEDBACK = "https://www.ebay.de/fdbk/feedback_profile/repoke";
