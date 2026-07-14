@@ -292,14 +292,14 @@ function YoutubeSection() {
       <div className="mx-auto max-w-4xl">
         <div className="mb-10 text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-            Bewegtbild
+            Gewinner 2024
           </p>
           <h2
             id="video-title"
             className="font-extrabold tracking-tight text-foreground"
             style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
           >
-            REPOKE im Video
+            rePoke-Patenschaft
           </h2>
         </div>
 
@@ -314,7 +314,7 @@ function YoutubeSection() {
           <iframe
             className="absolute inset-0 h-full w-full"
             src="https://www.youtube-nocookie.com/embed/ppYK2q5QDlc?rel=0"
-            title="REPOKE im Video"
+            title="rePoke-Patenschaft"
             loading="lazy"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
