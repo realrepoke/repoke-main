@@ -96,7 +96,7 @@ function Hero() {
         >
           Die{" "}
           <span style={{ color: "var(--brand-yellow)" }}>beliebtesten Sammelkarten</span>{" "}
-          – erreichbar für{" "}
+           erreichbar für{" "}
           <span
             style={{
               backgroundImage:
@@ -163,7 +163,7 @@ function ProductOffer() {
           !
         </h2>
         <p className="mt-6 text-base text-muted-foreground sm:text-lg">
-          Handverlesene Mischung mit Highlight-Karte – ideal als Einstieg, Geschenk oder
+          Handverlesene Mischung mit Highlight-Karte: ideal als Einstieg, Geschenk oder
           Erweiterung deiner Sammlung.
         </p>
 
@@ -355,7 +355,7 @@ function Gr8Section() {
           von REPOKE.
         </p>
         <p className="mt-3 text-base text-white/70 sm:text-lg">
-          Pokémon-Karten professionell einrahmen und bewerten lassen –{" "}
+          Pokémon-Karten professionell einrahmen und bewerten lassen:{" "}
           <span className="font-bold text-white">bereits ab 9,99 €</span>.
         </p>
 
