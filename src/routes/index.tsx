@@ -82,7 +82,7 @@ function Hero() {
     >
       <div className="mx-auto flex min-h-[92svh] max-w-6xl flex-col items-center justify-center px-6 py-24 text-center">
         <img
-          src={repokeLogo.url}
+          src={repokeLogo}
           alt="REPOKE – House of Cards"
           className="mb-6 h-auto w-32 drop-shadow-lg sm:w-36"
           width={320}
