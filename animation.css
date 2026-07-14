@@ -1,0 +1,264 @@
+/* REPOKE scroll animation styles — sourced from repoke-scroll-animation-final-v3.0.0.
+   Only the mask URL was rewritten to /animation/assets/. Visuals, proportions,
+   masks and logic remain unchanged from the delivered bundle. */
+
+.repoke-anim,
+.repoke-anim *,
+.repoke-anim *::before,
+.repoke-anim *::after {
+  box-sizing: border-box;
+}
+
+.repoke-anim img {
+  display: block;
+  max-width: 100%;
+}
+
+.repoke-anim .story {
+  position: relative;
+  height: 500svh;
+}
+
+.repoke-anim .stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: clip;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, .99) 0 17%, rgba(249, 246, 238, .92) 48%, rgba(225, 216, 199, .97) 100%),
+    #eee8dc;
+}
+
+.repoke-anim .stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .13;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.repoke-anim .ambient {
+  position: absolute;
+  width: min(42vw, 36rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(5.5rem);
+  opacity: .2;
+  pointer-events: none;
+}
+
+.repoke-anim .ambient-left {
+  left: -13vw;
+  top: 20%;
+  background: rgba(255, 220, 55, .78);
+}
+
+.repoke-anim .ambient-right {
+  right: -14vw;
+  bottom: 8%;
+  background: rgba(91, 75, 194, .52);
+}
+
+.repoke-anim .scene {
+  --scene-width: min(96vw, 94svh, 82rem);
+  --scene-scale: 1;
+  --pointer-x: 0;
+  --pointer-y: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--scene-width);
+  aspect-ratio: 1600 / 1594;
+  overflow: visible;
+  transform: translate(-50%, -50%) scale(var(--scene-scale));
+  perspective: 1600px;
+  perspective-origin: 50% 45%;
+  contain: layout style;
+}
+
+.repoke-anim .scene-tilt {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(var(--pointer-y) * -.7deg)) rotateY(calc(var(--pointer-x) * .7deg));
+  will-change: transform;
+}
+
+.repoke-anim .collection-stack {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  transform-style: preserve-3d;
+}
+
+.repoke-anim .assembly,
+.repoke-anim .final-collection {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  opacity: 0;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity, filter;
+}
+
+.repoke-anim .back-assembly {
+  z-index: 10;
+  clip-path: inset(0 50% 0 50%);
+}
+
+.repoke-anim .middle-assembly {
+  z-index: 20;
+}
+
+.repoke-anim .front-assembly {
+  z-index: 30;
+}
+
+.repoke-anim .final-collection {
+  z-index: 40;
+  filter:
+    drop-shadow(0 1rem .8rem rgba(52, 35, 22, .16))
+    drop-shadow(0 2.2rem 2rem rgba(52, 35, 22, .10));
+}
+
+.repoke-anim .collection-sheen {
+  position: absolute;
+  inset: 0;
+  z-index: 41;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(112deg, transparent 42%, rgba(255, 255, 255, .10) 46%, rgba(255, 255, 255, .34) 49%, rgba(255, 255, 255, .08) 52%, transparent 58%);
+  -webkit-mask: url("/animation/assets/cards-collection.png") center / contain no-repeat;
+  mask: url("/animation/assets/cards-collection.png") center / contain no-repeat;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.repoke-anim .box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38%;
+  height: auto;
+  z-index: 60;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 55%;
+  pointer-events: none;
+  user-select: none;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  filter:
+    drop-shadow(-.35rem .65rem .5rem rgba(43, 29, 19, .16))
+    drop-shadow(-1rem 1.55rem 1.25rem rgba(43, 29, 19, .24));
+  will-change: transform, opacity, filter;
+}
+
+.repoke-anim .box-shadow {
+  position: absolute;
+  left: 48%;
+  top: 54%;
+  z-index: 50;
+  width: 31%;
+  height: 43%;
+  border-radius: 46%;
+  background: rgba(52, 36, 24, .115);
+  filter: blur(2rem);
+  transform: translate(-50%, -50%) rotate(-4deg);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.repoke-anim .exit-shadow {
+  position: absolute;
+  left: 50%;
+  top: 76.5%;
+  z-index: 55;
+  width: 25%;
+  height: 2.4%;
+  border-radius: 50%;
+  opacity: 0;
+  background: rgba(28, 19, 14, .27);
+  filter: blur(.65rem);
+  transform: translate(-50%, -50%) scaleX(.5);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.repoke-anim .phase-label {
+  position: absolute;
+  left: clamp(1.25rem, 4vw, 4rem);
+  bottom: clamp(1.4rem, 4vw, 3.5rem);
+  z-index: 80;
+  display: flex;
+  gap: .75rem;
+  align-items: baseline;
+  font-weight: 800;
+  letter-spacing: -.025em;
+  color: #17142b;
+}
+
+.repoke-anim .phase-number {
+  color: #777181;
+  font-size: .72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.repoke-anim .phase-text {
+  font-size: clamp(.95rem, 1.4vw, 1.18rem);
+}
+
+.repoke-anim .progress {
+  position: absolute;
+  right: clamp(1.25rem, 4vw, 4rem);
+  top: 50%;
+  z-index: 80;
+  width: 2px;
+  height: min(32vh, 15rem);
+  overflow: hidden;
+  transform: translateY(-50%);
+  background: rgba(34, 29, 54, .14);
+}
+
+.repoke-anim .progress-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  background: #292253;
+  will-change: transform;
+}
+
+@media (max-width: 760px) {
+  .repoke-anim .story { height: 560svh; }
+  .repoke-anim .scene { --scene-width: min(98vw, 84svh); }
+  .repoke-anim .box { width: 43%; }
+  .repoke-anim .phase-label { bottom: 1.05rem; }
+  .repoke-anim .progress { right: .9rem; }
+}
+
+@media (max-height: 620px) and (orientation: landscape) {
+  .repoke-anim .scene { --scene-width: min(78vw, 94svh); }
+  .repoke-anim .box { width: 34%; }
+  .repoke-anim .phase-label { bottom: .75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repoke-anim .story { height: 110svh; }
+  .repoke-anim .box,
+  .repoke-anim .box-shadow,
+  .repoke-anim .exit-shadow,
+  .repoke-anim .assembly,
+  .repoke-anim .collection-sheen { display: none; }
+  .repoke-anim .final-collection { opacity: 1 !important; transform: none !important; }
+  .repoke-anim .progress-fill { transform: scaleY(1) !important; }
+}
