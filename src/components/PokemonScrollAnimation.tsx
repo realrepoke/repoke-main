@@ -43,10 +43,10 @@ export function PokemonScrollAnimation() {
 
     const phases = [
       { at: 0, number: "01", text: "Die Box" },
-      { at: 0.16, number: "02", text: "Die Vordergrundkarten" },
-      { at: 0.52, number: "03", text: "Die Hauptkarten dahinter" },
-      { at: 0.72, number: "04", text: "Die Hintergrundreihe" },
-      { at: 0.93, number: "05", text: "Die komplette Sammlung" },
+      { at: 0.16, number: "02", text: "Trainer-, Rare- & Energiekarten" },
+      { at: 0.52, number: "03", text: "1 V/VMAX garantiert" },
+      { at: 0.72, number: "04", text: "50 Karten" },
+      { at: 0.93, number: "04", text: "50 Karten, keine Doppelt" },
     ];
 
     let currentPhase = -1;
